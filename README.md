@@ -2,7 +2,6 @@
 
 👥 Integrantes
 
-Jorge Andrés Gutiérrez Suárez – 1202731
 David Espitia Velásquez – 1202510
 
 1. Objetivo General
