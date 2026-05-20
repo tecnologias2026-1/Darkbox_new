@@ -1,12 +1,12 @@
-/* ══════════════════════════════════════════════════
-   DARKBOX — login.css
-   Estilos exclusivos de la página de inicio de sesión.
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Oryon Gaming â€” login.css
+   Estilos exclusivos de la pÃ¡gina de inicio de sesiÃ³n.
    El header comparte estilos con index.html pero se
-   reescribe aquí para mantener los archivos independientes.
-   ══════════════════════════════════════════════════ */
+   reescribe aquÃ­ para mantener los archivos independientes.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 
-/* ── ESTILOS BASE ── */
+/* â”€â”€ ESTILOS BASE â”€â”€ */
 
 html { font-family: "Inter", sans-serif; }
 
@@ -14,7 +14,7 @@ body {
     margin: 0;
     /* El fondo tiene un degradado radial sutil que agrega profundidad.
        radial-gradient parte desde el centro con un morado muy oscuro
-       y va hacia los bordes con el color base de la página. */
+       y va hacia los bordes con el color base de la pÃ¡gina. */
     background: radial-gradient(ellipse at center, #1a1030 0%, #101828 60%, #0a0f1e 100%);
     color: white;
     /* min-height:100vh hace que el body ocupe al menos toda la altura de la pantalla,
@@ -23,7 +23,7 @@ body {
 }
 
 
-/* ── CONTENEDOR DE 12 COLUMNAS ──
+/* â”€â”€ CONTENEDOR DE 12 COLUMNAS â”€â”€
    Mismo concepto que en index.html: molde que centra y limita el contenido. */
 .contenedor {
     max-width: 1280px;
@@ -32,12 +32,12 @@ body {
 }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    HEADER
    Igual que en index.html pero sin los botones de
    biblioteca/carrito/usuario. Solo logo, buscador
-   y botón "Iniciar Sesión".
-   ══════════════════════════════════════════════════ */
+   y botÃ³n "Iniciar SesiÃ³n".
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 header {
     position: fixed;
@@ -108,12 +108,12 @@ header .buscador input {
 header .buscador input::placeholder { color: #8888aa; }
 header .buscador:focus-within { border-color: #a855f7; background: rgba(255,255,255,0.1); }
 
-/* Botón "Iniciar Sesión" del header:
-   Tiene un degradado de izquierda a derecha (morado → rosa)
-   y es el único botón con fondo sólido en el header. */
+/* BotÃ³n "Iniciar SesiÃ³n" del header:
+   Tiene un degradado de izquierda a derecha (morado â†’ rosa)
+   y es el Ãºnico botÃ³n con fondo sÃ³lido en el header. */
 header .btn-iniciar {
-    margin-left: auto;     /* empuja el botón al extremo derecho */
-    background: linear-gradient(90deg, #7c3aed, #E60076); /* morado → rosa */
+    margin-left: auto;     /* empuja el botÃ³n al extremo derecho */
+    background: linear-gradient(90deg, #7c3aed, #E60076); /* morado â†’ rosa */
     border: none;
     color: white;
     font-family: "Inter", sans-serif;
@@ -131,11 +131,11 @@ header .btn-iniciar:hover { opacity: 0.85; transform: translateY(-1px); }
 header .btn-iniciar:active { transform: translateY(0); }
 
 
-/* ══════════════════════════════════════════════════
-   MAIN: área del formulario
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   MAIN: Ã¡rea del formulario
    Ocupa toda la pantalla menos el header (70px).
    Centra la tarjeta de login tanto horizontal como verticalmente.
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 main {
     padding-top: 70px;     /* espacio para no quedar bajo el header fijo */
@@ -148,30 +148,30 @@ main {
 }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    TARJETA DE LOGIN
    Contenedor del formulario: fondo oscuro con borde
    sutil y esquinas redondeadas.
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .tarjeta-login {
     width: 100%;
-    max-width: 440px;      /* ancho máximo de la tarjeta */
-    background: #151d2e;   /* fondo oscuro azulado, un poco más claro que el body */
+    max-width: 440px;      /* ancho mÃ¡ximo de la tarjeta */
+    background: #151d2e;   /* fondo oscuro azulado, un poco mÃ¡s claro que el body */
     border: 1px solid rgba(168, 85, 247, 0.25); /* borde morado muy sutil */
-    border-radius: 16px;   /* esquinas más redondeadas que las tarjetas de juegos */
+    border-radius: 16px;   /* esquinas mÃ¡s redondeadas que las tarjetas de juegos */
     padding: 40px 36px;    /* espacio interno generoso */
 }
 
 
-/* ── ENCABEZADO DE LA TARJETA ── */
+/* â”€â”€ ENCABEZADO DE LA TARJETA â”€â”€ */
 
 .login-header {
-    text-align: center;    /* centra logo y subtítulo */
+    text-align: center;    /* centra logo y subtÃ­tulo */
     margin-bottom: 32px;
 }
 
-/* Logo grande dentro de la tarjeta: más grande que el del header */
+/* Logo grande dentro de la tarjeta: mÃ¡s grande que el del header */
 .logo-grande {
     font-family: "Inter", sans-serif;
     font-weight: 900;
@@ -184,7 +184,7 @@ main {
     -webkit-text-fill-color: transparent;
 }
 
-/* Subtítulo: Inter Regular, color gris claro */
+/* SubtÃ­tulo: Inter Regular, color gris claro */
 .subtitulo {
     font-family: "Inter", sans-serif;
     font-weight: 400;
@@ -194,9 +194,9 @@ main {
 }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FORMULARIO
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .form-login {
     display: flex;
@@ -205,7 +205,7 @@ main {
 }
 
 
-/* ── CAMPO (label + input-wrapper) ── */
+/* â”€â”€ CAMPO (label + input-wrapper) â”€â”€ */
 
 .campo {
     display: flex;
@@ -221,7 +221,7 @@ main {
     color: white;
 }
 
-/* Wrapper del input: contiene el ícono SVG y el input de texto en fila.
+/* Wrapper del input: contiene el Ã­cono SVG y el input de texto en fila.
    Mismo concepto que el buscador del header. */
 .input-wrapper {
     display: flex;
@@ -232,7 +232,7 @@ main {
     transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-/* Ícono SVG dentro del input */
+/* Ãcono SVG dentro del input */
 .input-wrapper svg {
     width: 18px; height: 18px;
     color: #8888aa;
@@ -243,7 +243,7 @@ main {
 /* Campo de texto dentro del wrapper */
 .input-wrapper input {
     flex: 1;
-    padding: 12px 14px;    /* más padding que el buscador para un input de formulario */
+    padding: 12px 14px;    /* mÃ¡s padding que el buscador para un input de formulario */
     background: transparent;
     border: none;
     color: white;
@@ -261,33 +261,33 @@ main {
 }
 
 
-/* ── BOTÓN INICIAR SESIÓN (dentro del formulario) ── */
+/* â”€â”€ BOTÃ“N INICIAR SESIÃ“N (dentro del formulario) â”€â”€ */
 
 .btn-submit {
-    /* Degradado horizontal de morado a rosa, igual que el botón del header */
+    /* Degradado horizontal de morado a rosa, igual que el botÃ³n del header */
     background: linear-gradient(90deg, #7c3aed, #E60076);
     border: none;
     color: white;
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    padding: 14px;         /* más alto que el del header para ser el CTA principal */
+    padding: 14px;         /* mÃ¡s alto que el del header para ser el CTA principal */
     border-radius: 8px;
     cursor: pointer;
     width: 100%;           /* ocupa todo el ancho de la tarjeta */
     transition: opacity 0.2s ease, transform 0.15s ease;
-    margin-top: 4px;       /* pequeño espacio extra sobre el botón */
+    margin-top: 4px;       /* pequeÃ±o espacio extra sobre el botÃ³n */
 }
 
 .btn-submit:hover { opacity: 0.85; transform: translateY(-1px); }
 .btn-submit:active { transform: translateY(0); }
 
 
-/* ── MENSAJE DE ERROR ── */
+/* â”€â”€ MENSAJE DE ERROR â”€â”€ */
 
 /* Oculto por defecto: display:none hace que no ocupe espacio ni sea visible.
    Cuando JavaScript le agrega la clase "visible", cambia a display:block
-   y aparece en pantalla entre el campo contraseña y el botón. */
+   y aparece en pantalla entre el campo contraseÃ±a y el botÃ³n. */
 .error-msg {
     display: none;
     color: #f87171;        /* rojo claro para indicar error */
@@ -305,14 +305,14 @@ main {
 .error-msg.visible { display: block; }
 
 
-/* ── ENLACE DE REGISTRO ── */
+/* â”€â”€ ENLACE DE REGISTRO â”€â”€ */
 
 .link-registro {
     text-align: center;
     font-family: "Inter", sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
-    /* El degradado en el texto del enlace sigue la paleta de la página */
+    /* El degradado en el texto del enlace sigue la paleta de la pÃ¡gina */
     background: linear-gradient(135deg, #C27AFF, #E60076);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -323,7 +323,7 @@ main {
 .link-registro:hover { opacity: 0.75; }
 
 
-/* ── CAJA DE CUENTA DE PRUEBA ── */
+/* â”€â”€ CAJA DE CUENTA DE PRUEBA â”€â”€ */
 
 .cuenta-prueba {
     margin-top: 8px;       /* espacio sobre la caja */
@@ -333,7 +333,7 @@ main {
     padding: 16px;
 }
 
-/* Título "Cuenta de prueba:" en gris claro */
+/* TÃ­tulo "Cuenta de prueba:" en gris claro */
 .prueba-titulo {
     font-weight: 600;
     color: #aaaacc;
@@ -351,9 +351,9 @@ main {
 }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    RESPONSIVE
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -365,7 +365,7 @@ main {
 /* Celular */
 @media (max-width: 600px) {
     .contenedor { padding: 0 16px; }
-    /* En celular ocultamos el buscador para dar más espacio al logo y botón */
+    /* En celular ocultamos el buscador para dar mÃ¡s espacio al logo y botÃ³n */
     header .buscador { display: none; }
     header .logo { font-size: 1.3rem; }
     header .btn-iniciar { padding: 8px 16px; font-size: 0.9rem; }

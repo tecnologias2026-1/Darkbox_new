@@ -1,12 +1,12 @@
-/* ══════════════════════════════════════════════════
-   DARKBOX — juego-single.css
-   Estilos para la página de detalle de UN solo juego.
-   Mucho más simple que juego.css: no hay sistema
-   multi-juego, solo la galería de fotos con radios.
-   ══════════════════════════════════════════════════ */
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Oryon Gaming â€” juego-single.css
+   Estilos para la pÃ¡gina de detalle de UN solo juego.
+   Mucho mÃ¡s simple que juego.css: no hay sistema
+   multi-juego, solo la galerÃ­a de fotos con radios.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 
-/* ── PÁGINA ── */
+/* â”€â”€ PÃGINA â”€â”€ */
 .juego-pagina {
     padding-top: 86px;
     padding-bottom: 80px;
@@ -14,7 +14,7 @@
 }
 
 
-/* ── BOTÓN VOLVER ── */
+/* â”€â”€ BOTÃ“N VOLVER â”€â”€ */
 .btn-volver {
     display: inline-flex;
     align-items: center;
@@ -31,11 +31,11 @@
 .btn-volver svg { width: 18px; height: 18px; }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    INTERRUPTORES INVISIBLES
    Los radios g1-g4 y los checkboxes toggle-* se
    ocultan visualmente pero siguen siendo funcionales.
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #toggle-menu,
 #toggle-req,
 input[name="galeria"] {
@@ -46,7 +46,7 @@ input[name="galeria"] {
 }
 
 
-/* ── ZONA SUPERIOR ── */
+/* â”€â”€ ZONA SUPERIOR â”€â”€ */
 .juego-top {
     display: grid;
     grid-template-columns: 1fr 300px;
@@ -55,14 +55,14 @@ input[name="galeria"] {
 }
 
 
-/* ══════════════════════════════════════════════════
-   GALERÍA DE IMÁGENES
-   Las 4 imágenes están apiladas (position:absolute).
-   El radio activo (g1-g4) determina cuál se muestra
-   con opacity:1. Las demás quedan en opacity:0.
-   ══════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   GALERÃA DE IMÃGENES
+   Las 4 imÃ¡genes estÃ¡n apiladas (position:absolute).
+   El radio activo (g1-g4) determina cuÃ¡l se muestra
+   con opacity:1. Las demÃ¡s quedan en opacity:0.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* Contenedor de imagen grande: proporción 16:9 fija */
+/* Contenedor de imagen grande: proporciÃ³n 16:9 fija */
 .galeria-grande {
     position: relative;
     width: 100%;
@@ -73,7 +73,7 @@ input[name="galeria"] {
     background: #0a0f1e;
 }
 
-/* Todas las imágenes apiladas e invisibles por defecto */
+/* Todas las imÃ¡genes apiladas e invisibles por defecto */
 .galeria-grande .slide {
     position: absolute;
     inset: 0;
@@ -85,7 +85,7 @@ input[name="galeria"] {
 }
 
 /* El radio g1-g4 activa la slide correspondiente.
-   Como los radios están ANTES del main en el HTML,
+   Como los radios estÃ¡n ANTES del main en el HTML,
    el selector ~ puede alcanzarlos. */
 #g1:checked ~ main .slide-1 { opacity: 1; }
 #g2:checked ~ main .slide-2 { opacity: 1; }
@@ -93,7 +93,7 @@ input[name="galeria"] {
 #g4:checked ~ main .slide-4 { opacity: 1; }
 
 
-/* ── MINIATURAS ── */
+/* â”€â”€ MINIATURAS â”€â”€ */
 .galeria-thumbs {
     display: flex;
     gap: 10px;
@@ -131,9 +131,9 @@ input[name="galeria"] {
 }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PANEL LATERAL DE COMPRA
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .juego-panel {
     background: #151d2e;
     border: 1px solid rgba(168, 85, 247, 0.2);
@@ -205,9 +205,9 @@ input[name="galeria"] {
 }
 
 
-/* ══════════════════════════════════════════════════
-   ZONA INFERIOR: título, meta y secciones
-   ══════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   ZONA INFERIOR: tÃ­tulo, meta y secciones
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .juego-bottom { margin-top: 36px; }
 
 .juego-titulo {
@@ -292,11 +292,11 @@ input[name="galeria"] {
 }
 
 
-/* ══════════════════════════════════════════════════
-   PESTAÑAS DE REQUISITOS
-   El checkbox #toggle-req alterna entre mínimos y
-   recomendados. Sin marcar → Mínimos. Marcado → Recomendados.
-   ══════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PESTAÃ‘AS DE REQUISITOS
+   El checkbox #toggle-req alterna entre mÃ­nimos y
+   recomendados. Sin marcar â†’ MÃ­nimos. Marcado â†’ Recomendados.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .req-tabs {
     display: flex;
     gap: 10px;
@@ -317,14 +317,85 @@ input[name="galeria"] {
     transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Estado inicial: Mínimos activo (morado) */
+/* =============================================================
+   THEME OVERRIDE - ORYON GAMING (Single Game Pages)
+   ============================================================= */
+
+.juego-pagina {
+    background:
+        radial-gradient(circle at 10% 12%, rgba(45, 212, 191, 0.1), transparent 35%),
+        radial-gradient(circle at 86% 18%, rgba(249, 115, 22, 0.12), transparent 34%),
+        transparent;
+}
+
+.btn-volver {
+    color: #9cb6d8;
+}
+
+.btn-volver:hover {
+    color: #dbeafe;
+}
+
+.galeria-grande,
+.juego-panel,
+.juego-seccion {
+    background: linear-gradient(160deg, rgba(19, 31, 47, 0.92), rgba(12, 21, 33, 0.92));
+    border: 1px solid rgba(125, 211, 252, 0.22);
+    border-radius: 16px;
+}
+
+.thumb {
+    border-radius: 10px;
+}
+
+#g1:checked ~ main .galeria-thumbs label:nth-child(1),
+#g2:checked ~ main .galeria-thumbs label:nth-child(2),
+#g3:checked ~ main .galeria-thumbs label:nth-child(3),
+#g4:checked ~ main .galeria-thumbs label:nth-child(4) {
+    border-color: #2dd4bf;
+    box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.15);
+}
+
+.juego-panel-precio {
+    color: #4ade80;
+}
+
+.juego-panel-btn {
+    background: linear-gradient(95deg, #0ea5e9, #2dd4bf 45%, #f97316);
+    color: #041018;
+    font-weight: 800;
+    border-radius: 12px;
+}
+
+.juego-panel-meta,
+.juego-descripcion-texto,
+.req-fila {
+    color: #9bb1cf;
+}
+
+.juego-badge-genero {
+    background: rgba(45, 212, 191, 0.2);
+    color: #8af1e6;
+}
+
+.req-tab {
+    border-color: rgba(125, 211, 252, 0.3);
+    color: #9cb6d8;
+}
+
+.req-tab:hover {
+    border-color: rgba(45, 212, 191, 0.65);
+    color: #e6f5ff;
+}
+
+/* Estado inicial: MÃ­nimos activo (morado) */
 .req-label-minimos {
     background: #7c3aed;
     border-color: #7c3aed;
     color: white;
 }
 
-/* Cuando el checkbox está marcado: Recomendados activo, Mínimos gris */
+/* Cuando el checkbox estÃ¡ marcado: Recomendados activo, MÃ­nimos gris */
 #toggle-req:checked ~ main .req-label-minimos {
     background: transparent;
     border-color: rgba(255, 255, 255, 0.15);
@@ -346,11 +417,11 @@ input[name="galeria"] {
 .req-minimos      { display: flex; }   /* visible por defecto */
 .req-recomendados { display: none; }   /* oculto por defecto */
 
-/* Cuando el checkbox está marcado: invertimos */
+/* Cuando el checkbox estÃ¡ marcado: invertimos */
 #toggle-req:checked ~ main .req-minimos      { display: none; }
 #toggle-req:checked ~ main .req-recomendados { display: flex; }
 
-/* Ítems de requisito */
+/* Ãtems de requisito */
 .req-item {
     display: flex;
     align-items: flex-start;
@@ -385,7 +456,7 @@ input[name="galeria"] {
 }
 
 
-/* ── MENÚ MÓVIL ── */
+/* â”€â”€ MENÃš MÃ“VIL â”€â”€ */
 .menu-movil {
     display: none;
     position: fixed;
@@ -401,7 +472,7 @@ input[name="galeria"] {
 @media (min-width: 601px) { .menu-movil { display: none !important; } }
 
 
-/* ══ RESPONSIVE ══════════════════════════════════ */
+/* â•â• RESPONSIVE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media (max-width: 900px) {
     .juego-top   { grid-template-columns: 1fr; }
     .juego-panel { position: static; }

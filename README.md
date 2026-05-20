@@ -1,22 +1,22 @@
-🌐 DARKBOX – E-commerce especializado en videojuegos
+﻿ðŸŒ Oryon Gaming â€“ E-commerce especializado en videojuegos
 
-👥 Integrantes
+ðŸ‘¥ Integrantes
 
-David Espitia Velásquez – 1202510
+David Espitia VelÃ¡squez â€“ 1202510
 
 1. Objetivo General
 
-Desarrollar una plataforma web tipo e-commerce especializada en la compra y venta de videojuegos, que permita a los usuarios publicar, buscar y adquirir productos de manera segura, rápida e intuitiva.
+Desarrollar una plataforma web tipo e-commerce especializada en la compra y venta de videojuegos, que permita a los usuarios publicar, buscar y adquirir productos de manera segura, rÃ¡pida e intuitiva.
 
-El sistema busca optimizar el proceso de comercialización digital dentro del contexto local, brindando herramientas como filtros de búsqueda, mensajería interna y sistema de reputación.
+El sistema busca optimizar el proceso de comercializaciÃ³n digital dentro del contexto local, brindando herramientas como filtros de bÃºsqueda, mensajerÃ­a interna y sistema de reputaciÃ³n.
 
 2. Contexto de Uso
 
-### ¿Quién usa el sistema?
+### Â¿QuiÃ©n usa el sistema?
 
-La plataforma será utilizada por:
+La plataforma serÃ¡ utilizada por:
 
--Usuarios compradores: Personas interesadas en adquirir videojuegos físicos o digitales.
+-Usuarios compradores: Personas interesadas en adquirir videojuegos fÃ­sicos o digitales.
 
 -Usuarios vendedores: Personas que desean publicar y vender videojuegos.
 
@@ -24,37 +24,37 @@ La plataforma será utilizada por:
 
 Entorno de uso
 
-### El sistema funcionará en:
+### El sistema funcionarÃ¡ en:
 
 -Navegadores web
 
 -Dispositivos: computador, tablet y smartphone
 
--Requiere conexión a internet
+-Requiere conexiÃ³n a internet
 
 ### Requisitos del entorno
 
--Seguridad en autenticación y datos
+-Seguridad en autenticaciÃ³n y datos
 
 -Interfaz intuitiva
 
 -Disponibilidad 24/7
 
--Tiempo de respuesta rápido
+-Tiempo de respuesta rÃ¡pido
 
-### Módulos funcionales
+### MÃ³dulos funcionales
 
--Módulo de registro e inicio de sesión
+-MÃ³dulo de registro e inicio de sesiÃ³n
 
--Módulo de publicación de videojuegos
+-MÃ³dulo de publicaciÃ³n de videojuegos
 
--Módulo de búsqueda y filtrado
+-MÃ³dulo de bÃºsqueda y filtrado
 
--Módulo de mensajería interna
+-MÃ³dulo de mensajerÃ­a interna
 
--Módulo de reputación
+-MÃ³dulo de reputaciÃ³n
 
--Módulo administrativo
+-MÃ³dulo administrativo
 
 ---
 
@@ -62,9 +62,9 @@ Entorno de uso
 
 ### 3.1 Requerimientos Funcionales
 
--RF-01: El sistema debe permitir el registro de usuario mediante correo electrónico y contraseña.
+-RF-01: El sistema debe permitir el registro de usuario mediante correo electrÃ³nico y contraseÃ±a.
 
--RF-02: El sistema debe permitir iniciar sesión.
+-RF-02: El sistema debe permitir iniciar sesiÃ³n.
 
 -RF-03: El sistema debe permitir publicar videojuegos.
 
@@ -82,7 +82,7 @@ Entorno de uso
 
 -RF-10: El sistema debe permitir gestionar el perfil.
 
--RF-11: El sistema debe permitir la administración de usuarios y publicaciones.
+-RF-11: El sistema debe permitir la administraciÃ³n de usuarios y publicaciones.
 
 ---
 
@@ -107,7 +107,7 @@ Entorno de uso
 
 ###  Diagrama de Casos de Uso
 
-Este diagrama representa la interacción entre los actores del sistema (usuario y administrador) y las funcionalidades principales, como registro, inicio de sesión, publicación de videojuegos, búsqueda, compra, mensajería y calificación.
+Este diagrama representa la interacciÃ³n entre los actores del sistema (usuario y administrador) y las funcionalidades principales, como registro, inicio de sesiÃ³n, publicaciÃ³n de videojuegos, bÃºsqueda, compra, mensajerÃ­a y calificaciÃ³n.
 
 ---<img width="392" height="925" alt="RTDFRbC_40VmlKynltRpww8e__E2ggX9cY0MI8YgxAVsvCMDdnsDxHQ4UWMkm0tOS0Gkn15uVh6gO7Nx_Sp4CtRUjG_88JP6_1Tsr10S36eh36q310Uiwrq0fPbaqCuAuVVQ7f2nWNkK-vfTj6hbZ6CutymsYytofCBlKBadRMi87Ea4kYxfs1B3e7S2A8FZs_3L" src="https://github.com/user-attachments/assets/7cf37d36-ae11-4028-908f-725abcedf107" />
 
@@ -121,7 +121,7 @@ Este diagrama muestra el proceso de compra de un videojuego:
 1. El usuario busca un videojuego
 2. El sistema consulta la base de datos
 3. El usuario selecciona un producto
-4. El sistema registra la transacción
+4. El sistema registra la transacciÃ³n
 5. El usuario califica la compra
 
 ###  Diagrama de Clases
@@ -134,7 +134,7 @@ Este diagrama muestra el proceso de compra de un videojuego:
 https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?p=f
 ---
 
-##  6. Diseño de Base de Datos
+##  6. DiseÃ±o de Base de Datos
 
 ###  Tablas principales
 
@@ -146,9 +146,9 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 
 -correo
 
--contraseña
+-contraseÃ±a
 
--reputación
+-reputaciÃ³n
 
 -fecha_registro
 
@@ -186,7 +186,7 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 
 ---
 
-###  Calificación
+###  CalificaciÃ³n
 
 -id_calificacion (PK)
 
@@ -200,7 +200,7 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 
 ---
 
-###  Transacción
+###  TransacciÃ³n
 
 -id_transaccion (PK)
 
@@ -224,35 +224,35 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 
 ---
 
-## 🔗 Relaciones
+## ðŸ”— Relaciones
 
--Un usuario puede publicar múltiples videojuegos
+-Un usuario puede publicar mÃºltiples videojuegos
 
 -Un usuario puede enviar y recibir mensajes
 
--Un usuario puede realizar múltiples transacciones
+-Un usuario puede realizar mÃºltiples transacciones
 
--Un videojuego pertenece a una transacción
+-Un videojuego pertenece a una transacciÃ³n
 
--Un usuario puede recibir múltiples calificaciones
+-Un usuario puede recibir mÃºltiples calificaciones
 
 -El administrador gestiona usuarios y publicaciones
 
 ---
 
-##  7. Documentación del Sistema
+##  7. DocumentaciÃ³n del Sistema
 
 ###  Estructura de carpetas
 
--/css → Contiene los estilos visuales del sistema
+-/css â†’ Contiene los estilos visuales del sistema
 
--/js → Contiene la lógica del sistema
+-/js â†’ Contiene la lÃ³gica del sistema
 
--/assets → Contiene imágenes e iconos
+-/assets â†’ Contiene imÃ¡genes e iconos
 
 ---
 
-## 8. Instalación y Ejecución
+## 8. InstalaciÃ³n y EjecuciÃ³n
 
 1. Descargar o clonar el proyecto
 2. Abrir la carpeta del proyecto
@@ -261,4 +261,5 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 5. Usar el sistema desde el navegador
 
 ---
+
 

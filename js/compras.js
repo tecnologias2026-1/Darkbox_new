@@ -1,15 +1,30 @@
-/*
-   ══════════════════════════════════════════════════════════════════════
-   DARKBOX — compras.js
+﻿/*
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Oryon Gaming â€” compras.js
    Sistema de procesamiento de compras.
    
-   Maneja la transición del carrito a la biblioteca cuando el usuario
-   completa una compra, generando códigos de licencia para cada juego.
-   ══════════════════════════════════════════════════════════════════════
+   Maneja la transiciÃ³n del carrito a la biblioteca cuando el usuario
+   completa una compra, generando cÃ³digos de licencia para cada juego.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 */
 
 var Compras = (function () {
-    const CLAVE_BIBLIOTECA = 'darkbox_biblioteca';
+    const CLAVE_BIBLIOTECA = 'oryongaming_biblioteca';
+    const CLAVE_BIBLIOTECA_ANTIGUA = 'darkbox_biblioteca';
+    const CLAVE_CARRITO = 'oryongaming_carrito';
+    const CLAVE_CARRITO_ANTIGUA = 'darkbox_carrito';
+
+    function migrarClaveLocalStorage(claveNueva, claveAntigua) {
+        const valorNuevo = localStorage.getItem(claveNueva);
+        const valorAntiguo = localStorage.getItem(claveAntigua);
+
+        if (valorNuevo === null && valorAntiguo !== null) {
+            localStorage.setItem(claveNueva, valorAntiguo);
+        }
+    }
+
+    migrarClaveLocalStorage(CLAVE_BIBLIOTECA, CLAVE_BIBLIOTECA_ANTIGUA);
+    migrarClaveLocalStorage(CLAVE_CARRITO, CLAVE_CARRITO_ANTIGUA);
 
     // Leer biblioteca
     function leerBiblioteca() {
@@ -45,7 +60,7 @@ var Compras = (function () {
         return Number(valor) || 0;
     }
 
-    // API Pública
+    // API PÃºblica
     return {
         // Procesar compra: mover juegos del carrito a la biblioteca
         procesarCompra: function(juegosDelCarrito) {
@@ -85,8 +100,9 @@ var Compras = (function () {
 
             guardarBiblioteca(biblioteca);
 
-            // Vaciar carrito después de la compra exitosa
-            localStorage.removeItem('darkbox_carrito');
+            // Vaciar carrito despuÃ©s de la compra exitosa
+            localStorage.removeItem(CLAVE_CARRITO);
+            localStorage.removeItem(CLAVE_CARRITO_ANTIGUA);
 
             return true;
         },
@@ -97,3 +113,5 @@ var Compras = (function () {
         }
     };
 })();
+
+
