@@ -1,15 +1,15 @@
-/* ══════════════════════════════════════════════════
-   DARKBOX — pago.css
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Oryon Gaming â€” pago.css
    Estilos para pago.html y compra-exitosa.html.
-   Ambas páginas viven en la carpeta proceso-compra/.
-   ══════════════════════════════════════════════════ */
+   Ambas pÃ¡ginas viven en la carpeta proceso-compra/.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    INTERRUPTORES INVISIBLES
-   Los radios name="metodo" controlan cuál formulario
+   Los radios name="metodo" controlan cuÃ¡l formulario
    se muestra (tarjeta o PayPal).
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 input[name="metodo"],
 #toggle-menu {
     position: absolute;
@@ -19,7 +19,7 @@ input[name="metodo"],
 }
 
 
-/* ── PÁGINA GENERAL ── */
+/* â”€â”€ PÃGINA GENERAL â”€â”€ */
 .pago-pagina {
     padding-top: 100px;
     padding-bottom: 80px;
@@ -35,7 +35,7 @@ input[name="metodo"],
 }
 
 
-/* ── LAYOUT: formulario izquierda + resumen derecha ── */
+/* â”€â”€ LAYOUT: formulario izquierda + resumen derecha â”€â”€ */
 .pago-layout {
     display: grid;
     grid-template-columns: 1fr 360px;
@@ -44,9 +44,9 @@ input[name="metodo"],
 }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SECCIONES (cajas con fondo oscuro)
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .pago-seccion {
     background: #151d2e;
     border: 1px solid rgba(255, 255, 255, 0.07);
@@ -64,18 +64,18 @@ input[name="metodo"],
 }
 
 
-/* ══════════════════════════════════════════════════
-   OPCIONES DE MÉTODO DE PAGO
-   Cada opción es un label con borde.
-   El CSS resalta la opción activa con borde morado.
-   ══════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   OPCIONES DE MÃ‰TODO DE PAGO
+   Cada opciÃ³n es un label con borde.
+   El CSS resalta la opciÃ³n activa con borde morado.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .metodos-lista {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-/* Estilo base de cada opción */
+/* Estilo base de cada opciÃ³n */
 .metodo-opcion {
     display: flex;
     align-items: center;
@@ -98,7 +98,7 @@ input[name="metodo"],
     flex-shrink: 0;
 }
 
-/* Punto de radio visual (círculo vacío por defecto) */
+/* Punto de radio visual (cÃ­rculo vacÃ­o por defecto) */
 .metodo-radio {
     width: 18px;
     height: 18px;
@@ -108,7 +108,7 @@ input[name="metodo"],
     transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-/* Opción activa: borde morado, texto blanco, punto morado con relleno */
+/* OpciÃ³n activa: borde morado, texto blanco, punto morado con relleno */
 #metodo-tarjeta:checked ~ main .metodo-tarjeta-label,
 #metodo-paypal:checked  ~ main .metodo-paypal-label {
     border-color: #a855f7;
@@ -125,23 +125,23 @@ input[name="metodo"],
 }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FORMULARIOS
    .form-tarjeta visible por defecto.
    .form-paypal oculto por defecto.
-   El CSS los alterna según el radio activo.
-   ══════════════════════════════════════════════════ */
+   El CSS los alterna segÃºn el radio activo.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* Por defecto: tarjeta visible, PayPal oculto */
 .form-tarjeta { display: block; }
 .form-paypal  { display: none; }
 
-/* Cuando PayPal está marcado: invertimos */
+/* Cuando PayPal estÃ¡ marcado: invertimos */
 #metodo-paypal:checked ~ main .form-tarjeta { display: none; }
 #metodo-paypal:checked ~ main .form-paypal  { display: block; }
 
 
-/* ── CAMPOS DEL FORMULARIO ── */
+/* â”€â”€ CAMPOS DEL FORMULARIO â”€â”€ */
 
 .campo-grupo {
     margin-bottom: 20px;
@@ -188,7 +188,7 @@ input[name="metodo"],
     gap: 16px;
 }
 
-/* Texto descriptivo del método PayPal */
+/* Texto descriptivo del mÃ©todo PayPal */
 .paypal-desc {
     font-family: "Inter", sans-serif;
     font-size: 0.9rem;
@@ -198,7 +198,7 @@ input[name="metodo"],
 }
 
 
-/* ── BOTÓN PAGAR ── */
+/* â”€â”€ BOTÃ“N PAGAR â”€â”€ */
 
 .btn-pagar {
     width: 100%;
@@ -218,7 +218,7 @@ input[name="metodo"],
 .btn-pagar:hover  { opacity: 0.85; transform: translateY(-1px); }
 .btn-pagar:active { transform: translateY(0); }
 
-/* El botón muestra el texto según el método activo.
+/* El botÃ³n muestra el texto segÃºn el mÃ©todo activo.
    Por defecto muestra el texto de tarjeta. */
 .btn-texto-tarjeta { display: inline; }
 .btn-texto-paypal  { display: none; }
@@ -227,9 +227,9 @@ input[name="metodo"],
 #metodo-paypal:checked ~ main .btn-texto-paypal  { display: inline; }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    RESUMEN DEL PEDIDO (columna derecha)
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .pago-resumen {
     background: #151d2e;
     border: 1px solid rgba(168, 85, 247, 0.2);
@@ -247,7 +247,7 @@ input[name="metodo"],
     margin: 0 0 20px 0;
 }
 
-/* Cada juego en el resumen: imagen pequeña + nombre + precio */
+/* Cada juego en el resumen: imagen pequeÃ±a + nombre + precio */
 .resumen-juego {
     display: flex;
     align-items: center;
@@ -280,7 +280,7 @@ input[name="metodo"],
     margin: 0;
 }
 
-/* Línea separadora */
+/* LÃ­nea separadora */
 .resumen-separador {
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
@@ -298,7 +298,7 @@ input[name="metodo"],
     margin-bottom: 10px;
 }
 
-/* Fila del total: más grande */
+/* Fila del total: mÃ¡s grande */
 .resumen-total {
     font-weight: 900;
     font-size: 1.1rem;
@@ -325,10 +325,10 @@ input[name="metodo"],
 }
 
 
-/* ══════════════════════════════════════════════════
-   PÁGINA DE COMPRA EXITOSA
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PÃGINA DE COMPRA EXITOSA
    Centrada vertical y horizontalmente en la pantalla.
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .exitosa-pagina {
     display: flex;
     flex-direction: column;
@@ -339,17 +339,17 @@ input[name="metodo"],
     padding: 40px 20px;
 }
 
-/* Ícono check verde grande */
+/* Ãcono check verde grande */
 .exitosa-icono svg {
     width: 90px;
     height: 90px;
     color: #22c55e;
-    /* Animación: el check aparece dibujándose */
+    /* AnimaciÃ³n: el check aparece dibujÃ¡ndose */
     animation: aparecer 0.6s ease;
     margin-bottom: 24px;
 }
 
-/* Animación de entrada del ícono */
+/* AnimaciÃ³n de entrada del Ã­cono */
 @keyframes aparecer {
     from { opacity: 0; transform: scale(0.5); }
     to   { opacity: 1; transform: scale(1); }
@@ -361,7 +361,7 @@ input[name="metodo"],
     font-size: clamp(2rem, 4vw, 3rem);
     color: white;
     margin: 0 0 16px 0;
-    animation: subir 0.5s ease 0.2s both;  /* retraso de 0.2s para que entre después del ícono */
+    animation: subir 0.5s ease 0.2s both;  /* retraso de 0.2s para que entre despuÃ©s del Ã­cono */
 }
 
 .exitosa-mensaje {
@@ -374,7 +374,7 @@ input[name="metodo"],
     animation: subir 0.5s ease 0.3s both;
 }
 
-/* Animación de entrada del texto */
+/* AnimaciÃ³n de entrada del texto */
 @keyframes subir {
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -389,7 +389,7 @@ input[name="metodo"],
     animation: subir 0.5s ease 0.4s both;
 }
 
-/* Botón principal morado */
+/* BotÃ³n principal morado */
 .btn-biblioteca {
     background: linear-gradient(90deg, #7c3aed, #E60076);
     color: white;
@@ -404,7 +404,7 @@ input[name="metodo"],
 
 .btn-biblioteca:hover { opacity: 0.85; transform: translateY(-1px); }
 
-/* Botón secundario gris oscuro */
+/* BotÃ³n secundario gris oscuro */
 .btn-tienda {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -421,7 +421,7 @@ input[name="metodo"],
 .btn-tienda:hover { background: rgba(255, 255, 255, 0.14); }
 
 
-/* ── MENÚ MÓVIL ── */
+/* â”€â”€ MENÃš MÃ“VIL â”€â”€ */
 .menu-movil {
     display: none;
     position: fixed;
@@ -438,7 +438,7 @@ input[name="metodo"],
 @media (min-width: 601px) { .menu-movil { display: none !important; } }
 
 
-/* ══ RESPONSIVE ══════════════════════════════════ */
+/* â•â• RESPONSIVE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media (max-width: 900px) {
     .pago-layout  { grid-template-columns: 1fr; }
     .pago-resumen { position: static; }

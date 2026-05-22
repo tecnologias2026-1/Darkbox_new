@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DARKBOX — Registro</title>
+    <title>Oryon Gaming — Registro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="contenedor">
-            <a href="home.html" class="logo">DARKBOX</a>
+            <a href="home.html" class="logo">Oryon Gaming</a>
 
             <div class="buscador">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -29,7 +29,7 @@
     <main>
         <section class="tarjeta-registro" aria-labelledby="registroTitulo">
             <div class="registro-header">
-                <h1 class="logo-grande" id="registroTitulo">DARKBOX</h1>
+                <h1 class="logo-grande" id="registroTitulo">Oryon Gaming</h1>
                 <p class="subtitulo">Crea tu cuenta</p>
             </div>
 
@@ -77,10 +77,9 @@
         </section>
     </main>
 
-    <script src="js/auth.js"></script>
     <script src="js/buscar.js"></script>
     <script>
-        function validarRegistro(event) {
+        async function validarRegistro(event) {
             event.preventDefault();
 
             var nombre = document.getElementById('nombre').value.trim();
@@ -102,23 +101,33 @@
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return mostrarError('Ingresa un email valido.');
             if (password.length < 6) return mostrarError('La contrasena debe tener al menos 6 caracteres.');
 
-            var nuevoUsuario = Auth.crearUsuario({
-                nombre: nombre,
-                email: email,
-                password: password
-            });
+            try {
+                var response = await fetch('api/register.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'same-origin',
+                    body: JSON.stringify({
+                        nombre: nombre,
+                        email: email,
+                        password: password
+                    })
+                });
 
-            if (!nuevoUsuario) {
-                return mostrarError('Este email ya esta registrado.');
+                var data = await response.json();
+
+                if (!response.ok || !data.ok) {
+                    return mostrarError(data.message || 'No se pudo completar el registro.');
+                }
+
+                msgExito.textContent = 'Cuenta creada. Redirigiendo...';
+                msgExito.classList.add('visible');
+
+                setTimeout(function () {
+                    window.location.href = 'home-sesion.php';
+                }, 1200);
+            } catch (error) {
+                return mostrarError('Error de conexión con el servidor.');
             }
-
-            Auth.guardarSesion(nuevoUsuario);
-            msgExito.textContent = 'Cuenta creada. Redirigiendo...';
-            msgExito.classList.add('visible');
-
-            setTimeout(function () {
-                window.location.href = 'home-sesion.html';
-            }, 1200);
 
             return false;
         }

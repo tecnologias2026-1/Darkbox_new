@@ -1,15 +1,27 @@
-/*
-   ══════════════════════════════════════════════════════════════════════
-   DARKBOX — licencias.js
-   Sistema de generación y gestión de códigos de licencia de juegos.
+﻿/*
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Oryon Gaming â€” licencias.js
+   Sistema de generaciÃ³n y gestiÃ³n de cÃ³digos de licencia de juegos.
    
-   Genera códigos únicos cuando se compra un juego y los almacena
+   Genera cÃ³digos Ãºnicos cuando se compra un juego y los almacena
    en localStorage junto con los datos de la compra.
-   ══════════════════════════════════════════════════════════════════════
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 */
 
 var Licencias = (function () {
-    const CLAVE = 'darkbox_licencias';
+    const CLAVE = 'oryongaming_licencias';
+    const CLAVE_ANTIGUA = 'darkbox_licencias';
+
+    function migrarClaveLocalStorage() {
+        const valorNuevo = localStorage.getItem(CLAVE);
+        const valorAntiguo = localStorage.getItem(CLAVE_ANTIGUA);
+
+        if (valorNuevo === null && valorAntiguo !== null) {
+            localStorage.setItem(CLAVE, valorAntiguo);
+        }
+    }
+
+    migrarClaveLocalStorage();
 
     // Leer licencias guardadas
     function leer() {
@@ -22,7 +34,7 @@ var Licencias = (function () {
         localStorage.setItem(CLAVE, JSON.stringify(licencias));
     }
 
-    // Generar código único de licencia
+    // Generar cÃ³digo Ãºnico de licencia
     function generarCodigo() {
         const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         let codigo = '';
@@ -38,7 +50,7 @@ var Licencias = (function () {
         return codigo;
     }
 
-    // API Pública
+    // API PÃºblica
     return {
         // Agregar licencia cuando se compra un juego
         crearLicencia: function(juego) {
@@ -76,3 +88,5 @@ var Licencias = (function () {
         }
     };
 })();
+
+

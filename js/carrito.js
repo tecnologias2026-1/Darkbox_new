@@ -1,51 +1,63 @@
-/*
-   ══════════════════════════════════════════════════════════════════════
-   DARKBOX — carrito.js
-   Módulo central del carrito de compras.
+﻿/*
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Oryon Gaming â€” carrito.js
+   MÃ³dulo central del carrito de compras.
 
-   Este archivo debe estar en la carpeta RAÍZ del proyecto (al lado de
+   Este archivo debe estar en la carpeta RAÃZ del proyecto (al lado de
    home.html, home-sesion.html, carrito.html, etc.) para que tanto
-   las páginas raíz como las subcarpetas puedan accederlo con:
-     - Páginas raíz:       src="carrito.js"
-     - Páginas en carpeta: src="../carrito.js"
+   las pÃ¡ginas raÃ­z como las subcarpetas puedan accederlo con:
+     - PÃ¡ginas raÃ­z:       src="carrito.js"
+     - PÃ¡ginas en carpeta: src="../carrito.js"
 
-   ── QUÉ HACE ESTE ARCHIVO ──
+   â”€â”€ QUÃ‰ HACE ESTE ARCHIVO â”€â”€
    Define el objeto global "Carrito" con 5 funciones:
-     Carrito.agregar(juego)       → agrega un juego al carrito
-     Carrito.eliminar(id)         → elimina un juego por su id
-     Carrito.obtener()            → devuelve el array de juegos
-     Carrito.total()              → suma los precios y devuelve el total
-     Carrito.formatearPrecio(num) → convierte 149000 en "$149.000"
-     Carrito.notificar(msg, tipo) → muestra un toast (mensaje flotante)
-     Carrito.actualizarBadge()    → actualiza el contador rojo del header
+     Carrito.agregar(juego)       â†’ agrega un juego al carrito
+     Carrito.eliminar(id)         â†’ elimina un juego por su id
+     Carrito.obtener()            â†’ devuelve el array de juegos
+     Carrito.total()              â†’ suma los precios y devuelve el total
+     Carrito.formatearPrecio(num) â†’ convierte 149000 en "$149.000"
+     Carrito.notificar(msg, tipo) â†’ muestra un toast (mensaje flotante)
+     Carrito.actualizarBadge()    â†’ actualiza el contador rojo del header
 
-   ── DÓNDE SE GUARDAN LOS DATOS ──
-   En localStorage del navegador, bajo la clave "darkbox_carrito".
+   â”€â”€ DÃ“NDE SE GUARDAN LOS DATOS â”€â”€
+   En localStorage del navegador, bajo la clave "oryongaming_carrito".
    localStorage persiste aunque se cierre y se abra el navegador.
    Se borra si el usuario limpia los datos del navegador.
-   ══════════════════════════════════════════════════════════════════════
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 */
 
 var Carrito = (function () {
 
-    /* ── CLAVE de localStorage ──────────────────────────────────────
+    /* â”€â”€ CLAVE de localStorage â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
        Todos los datos del carrito se guardan bajo esta clave.
-       Si cambias la clave, los carritos existentes se perderán. */
-    var CLAVE = 'darkbox_carrito';
+       Si cambias la clave, los carritos existentes se perderÃ¡n. */
+    var CLAVE = 'oryongaming_carrito';
+    var CLAVE_ANTIGUA = 'darkbox_carrito';
+
+    function migrarClaveLocalStorage() {
+        var valorNuevo = localStorage.getItem(CLAVE);
+        var valorAntiguo = localStorage.getItem(CLAVE_ANTIGUA);
+
+        if (valorNuevo === null && valorAntiguo !== null) {
+            localStorage.setItem(CLAVE, valorAntiguo);
+        }
+    }
+
+    migrarClaveLocalStorage();
 
 
-    /* ══════════════════════════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        FUNCIONES PRIVADAS (solo usadas internamente)
-       ══════════════════════════════════════════════════════════════ */
+       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     /* Leer el carrito de localStorage y devolverlo como array.
        JSON.parse convierte el texto guardado en un array de objetos.
-       Si no hay nada guardado aún, devuelve un array vacío []. */
+       Si no hay nada guardado aÃºn, devuelve un array vacÃ­o []. */
     function leer() {
         var datos = localStorage.getItem(CLAVE);
         var lista = datos ? JSON.parse(datos) : [];
 
-        // Filtrar juegos inválidos (sin id o nombre)
+        // Filtrar juegos invÃ¡lidos (sin id o nombre)
         lista = lista.filter(function(juego) {
             return juego && juego.id && juego.nombre && juego.precio;
         });
@@ -60,37 +72,37 @@ var Carrito = (function () {
     }
 
 
-    /* ══════════════════════════════════════════════════════════════
-       API PÚBLICA — estas son las funciones que usan las páginas
-       ══════════════════════════════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       API PÃšBLICA â€” estas son las funciones que usan las pÃ¡ginas
+       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     return {
 
-        /* ── AGREGAR UN JUEGO ────────────────────────────────────────
+        /* â”€â”€ AGREGAR UN JUEGO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
            Recibe un objeto con: { id, nombre, genero, precio, imagen }
-           Si el juego ya está en el carrito (mismo id) no lo duplica.
-           Devuelve true si se agregó, false si ya estaba.
+           Si el juego ya estÃ¡ en el carrito (mismo id) no lo duplica.
+           Devuelve true si se agregÃ³, false si ya estaba.
 
            Ejemplo de uso:
              Carrito.agregar({
                id:     "helldrivers2",
                nombre: "Helldivers 2",
-               genero: "Acción/Cooperativo",
+               genero: "AcciÃ³n/Cooperativo",
                precio: 149000,
                imagen: "https://url-de-la-imagen.jpg"
              });
-        ─────────────────────────────────────────────────────────── */
+        â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
         agregar: function (juego) {
             var lista = leer();
 
             /* Buscamos si ya existe un juego con el mismo id.
-               .some() devuelve true si al menos un elemento cumple la condición. */
+               .some() devuelve true si al menos un elemento cumple la condiciÃ³n. */
             var yaExiste = lista.some(function (item) {
                 return item.id === juego.id;
             });
 
             if (yaExiste) {
-                /* El juego ya está en el carrito, no lo duplicamos */
+                /* El juego ya estÃ¡ en el carrito, no lo duplicamos */
                 return false;
             }
 
@@ -101,11 +113,11 @@ var Carrito = (function () {
             /* Actualizamos el badge del header (contador rojo) */
             this.actualizarBadge();
 
-            return true; /* indica que sí se agregó */
+            return true; /* indica que sÃ­ se agregÃ³ */
         },
 
 
-        /* ── ELIMINAR UN JUEGO ───────────────────────────────────────
+        /* â”€â”€ ELIMINAR UN JUEGO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
            Recibe el id del juego a eliminar.
            .filter() devuelve un nuevo array sin el elemento eliminado. */
         eliminar: function (id) {
@@ -121,15 +133,15 @@ var Carrito = (function () {
         },
 
 
-        /* ── OBTENER TODOS LOS JUEGOS ────────────────────────────────
+        /* â”€â”€ OBTENER TODOS LOS JUEGOS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
            Devuelve el array completo de juegos en el carrito. */
         obtener: function () {
             return leer();
         },
 
 
-        /* ── CALCULAR TOTAL ──────────────────────────────────────────
-           Suma los precios de todos los juegos y devuelve el número.
+        /* â”€â”€ CALCULAR TOTAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+           Suma los precios de todos los juegos y devuelve el nÃºmero.
            .reduce() acumula la suma recorriendo el array. */
         total: function () {
             var lista = leer();
@@ -144,19 +156,19 @@ var Carrito = (function () {
         },
 
 
-        /* ── FORMATEAR PRECIO ────────────────────────────────────────
-           Convierte un número (ej: 149000) en texto con formato (ej: "$149.000").
+        /* â”€â”€ FORMATEAR PRECIO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+           Convierte un nÃºmero (ej: 149000) en texto con formato (ej: "$149.000").
            toLocaleString('es-CO') aplica el formato de Colombia (punto como separador). */
         formatearPrecio: function (numero) {
-            // Asegurar que es un número
+            // Asegurar que es un nÃºmero
             var num = Number(numero);
             if (isNaN(num)) num = 0;
             return '$' + num.toLocaleString('es-CO');
         },
 
 
-        /* ── ACTUALIZAR BADGE DEL HEADER ─────────────────────────────
-           Busca en la página el elemento con id="carrito-badge" y
+        /* â”€â”€ ACTUALIZAR BADGE DEL HEADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+           Busca en la pÃ¡gina el elemento con id="carrito-badge" y
            muestra la cantidad de juegos en el carrito.
            Si hay 0 juegos, oculta el badge. */
         actualizarBadge: function () {
@@ -169,8 +181,8 @@ var Carrito = (function () {
                 badge.textContent = cantidad;
             }
 
-            /* Badge menú móvil: class="carrito-badge-movil"
-               Puede haber más de uno, por eso usamos querySelectorAll */
+            /* Badge menÃº mÃ³vil: class="carrito-badge-movil"
+               Puede haber mÃ¡s de uno, por eso usamos querySelectorAll */
             var badgesMovil = document.querySelectorAll('.carrito-badge-movil');
             for (var i = 0; i < badgesMovil.length; i++) {
                 badgesMovil[i].style.display = cantidad === 0 ? 'none' : 'flex';
@@ -179,21 +191,21 @@ var Carrito = (function () {
         },
 
 
-        /* ── NOTIFICAR (Toast) ───────────────────────────────────────
+        /* â”€â”€ NOTIFICAR (Toast) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
            Muestra un mensaje flotante en la esquina de la pantalla.
            tipo puede ser "ok" (verde) o "aviso" (amarillo).
-           El mensaje desaparece automáticamente después de 3 segundos.
+           El mensaje desaparece automÃ¡ticamente despuÃ©s de 3 segundos.
 
-           Crea dinámicamente el elemento, lo agrega al body,
-           y lo elimina después de la animación. */
+           Crea dinÃ¡micamente el elemento, lo agrega al body,
+           y lo elimina despuÃ©s de la animaciÃ³n. */
         notificar: function (mensaje, tipo) {
-            /* Evitar múltiples toasts al mismo tiempo */
-            var existente = document.getElementById('darkbox-toast');
+            /* Evitar mÃºltiples toasts al mismo tiempo */
+            var existente = document.getElementById('oryongaming-toast');
             if (existente) existente.remove();
 
             /* Creamos el elemento toast */
             var toast = document.createElement('div');
-            toast.id = 'darkbox-toast';
+            toast.id = 'oryongaming-toast';
 
             /* Estilos del toast aplicados directamente con JavaScript */
             toast.style.cssText = [
@@ -213,7 +225,7 @@ var Carrito = (function () {
                 'transform: translateY(12px)'
             ].join(';');
 
-            /* Color según el tipo: verde para "ok", amarillo para "aviso" */
+            /* Color segÃºn el tipo: verde para "ok", amarillo para "aviso" */
             toast.style.background = (tipo === 'ok')
                 ? 'linear-gradient(90deg, #16a34a, #22c55e)'   /* verde */
                 : 'linear-gradient(90deg, #b45309, #f59e0b)';  /* amarillo */
@@ -223,9 +235,9 @@ var Carrito = (function () {
             /* Agregamos el toast al body para que se muestre */
             document.body.appendChild(toast);
 
-            /* Activamos la animación de entrada con un pequeño retraso.
+            /* Activamos la animaciÃ³n de entrada con un pequeÃ±o retraso.
                requestAnimationFrame asegura que el navegador haya pintado
-               el elemento antes de iniciar la transición. */
+               el elemento antes de iniciar la transiciÃ³n. */
             requestAnimationFrame(function () {
                 requestAnimationFrame(function () {
                     toast.style.opacity = '1';
@@ -233,15 +245,15 @@ var Carrito = (function () {
                 });
             });
 
-            /* Después de 3 segundos, animamos la salida y eliminamos el toast */
+            /* DespuÃ©s de 3 segundos, animamos la salida y eliminamos el toast */
             setTimeout(function () {
                 toast.style.opacity = '0';
                 toast.style.transform = 'translateY(12px)';
 
-                /* Eliminamos el elemento del DOM después de que termine la animación */
+                /* Eliminamos el elemento del DOM despuÃ©s de que termine la animaciÃ³n */
                 setTimeout(function () {
                     if (toast.parentNode) toast.remove();
-                }, 400); /* 400ms = duración de la transición CSS */
+                }, 400); /* 400ms = duraciÃ³n de la transiciÃ³n CSS */
 
             }, 3000); /* 3000ms = 3 segundos visible */
         }
@@ -251,12 +263,13 @@ var Carrito = (function () {
 })(); /* IIFE: se ejecuta inmediatamente al cargar el archivo */
 
 
-/* ══════════════════════════════════════════════════════════════════════
-   INICIALIZACIÓN AUTOMÁTICA
-   Al cargar cualquier página que incluya carrito.js,
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   INICIALIZACIÃ“N AUTOMÃTICA
+   Al cargar cualquier pÃ¡gina que incluya carrito.js,
    actualizamos el badge del header con el conteo actual.
-   Esto asegura que el badge esté correcto al navegar entre páginas.
-   ══════════════════════════════════════════════════════════════════════ */
+   Esto asegura que el badge estÃ© correcto al navegar entre pÃ¡ginas.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 document.addEventListener('DOMContentLoaded', function () {
     Carrito.actualizarBadge();
 });
+

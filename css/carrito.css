@@ -1,10 +1,10 @@
-/* ══════════════════════════════════════════════════
-   DARKBOX — carrito.css
-   Estilos exclusivos de la página del carrito.
-   ══════════════════════════════════════════════════ */
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Oryon Gaming â€” carrito.css
+   Estilos exclusivos de la pÃ¡gina del carrito.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 
-/* ── PÁGINA ── */
+/* â”€â”€ PÃGINA â”€â”€ */
 .carrito-pagina {
     padding-top: 100px;
     padding-bottom: 80px;
@@ -20,7 +20,7 @@
 }
 
 
-/* ── LAYOUT: lista izquierda + resumen derecha ── */
+/* â”€â”€ LAYOUT: lista izquierda + resumen derecha â”€â”€ */
 .carrito-layout {
     display: grid;
     grid-template-columns: 1fr 360px;
@@ -29,9 +29,9 @@
 }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    TARJETAS DE JUEGOS EN EL CARRITO
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .carrito-item {
     display: flex;
     align-items: center;
@@ -41,7 +41,7 @@
     border-radius: 12px;
     padding: 16px 20px;
     margin-bottom: 16px;
-    /* Animación suave al aparecer */
+    /* AnimaciÃ³n suave al aparecer */
     animation: fadeIn 0.25s ease;
 }
 
@@ -84,11 +84,11 @@
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 1rem;
-    color: #22c55e; /* verde igual que en la página del juego */
+    color: #22c55e; /* verde igual que en la pÃ¡gina del juego */
     margin: 0;
 }
 
-/* Botón eliminar (ícono basura) */
+/* BotÃ³n eliminar (Ã­cono basura) */
 .item-eliminar {
     background: transparent;
     border: none;
@@ -112,10 +112,10 @@
 }
 
 
-/* ══════════════════════════════════════════════════
-   ESTADO VACÍO
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   ESTADO VACÃO
    Se muestra cuando no hay juegos en el carrito.
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .carrito-vacio {
     display: flex;
     flex-direction: column;
@@ -143,7 +143,7 @@
     font-weight: 600;
 }
 
-/* Botón "Explorar juegos" en el estado vacío */
+/* BotÃ³n "Explorar juegos" en el estado vacÃ­o */
 .btn-vacio {
     display: inline-block;
     background: linear-gradient(90deg, #7c3aed, #E60076);
@@ -160,9 +160,9 @@
 .btn-vacio:hover { opacity: 0.85; transform: translateY(-1px); }
 
 
-/* ══════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PANEL DE RESUMEN (lateral derecho)
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .carrito-resumen {
     background: #151d2e;
     border: 1px solid rgba(168, 85, 247, 0.2);
@@ -192,14 +192,14 @@
 }
 
 
-/* Línea separadora */
+/* LÃ­nea separadora */
 .resumen-separador {
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
     margin: 16px 0;
 }
 
-/* Fila del total: más grande y en blanco */
+/* Fila del total: mÃ¡s grande y en blanco */
 .resumen-total {
     font-weight: 900;
     font-size: 1.1rem;
@@ -212,7 +212,7 @@
     color: white;
 }
 
-/* Botón principal "Proceder al Pago" */
+/* BotÃ³n principal "Proceder al Pago" */
 .btn-proceder {
     width: 100%;
     background: linear-gradient(90deg, #7c3aed, #E60076);
@@ -231,7 +231,7 @@
 .btn-proceder:hover  { opacity: 0.85; transform: translateY(-1px); }
 .btn-proceder:active { transform: translateY(0); }
 
-/* Botón secundario "Continuar Comprando" */
+/* BotÃ³n secundario "Continuar Comprando" */
 .btn-continuar {
     display: block;
     width: 100%;
@@ -252,16 +252,16 @@
 .btn-continuar:hover { background: rgba(255, 255, 255, 0.1); }
 
 
-/* ══════════════════════════════════════════════════
-   BADGE DEL HEADER (contador rojo en el botón Carrito)
-   Funciona en TODAS las páginas que incluyan carrito.js.
-   ══════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BADGE DEL HEADER (contador rojo en el botÃ³n Carrito)
+   Funciona en TODAS las pÃ¡ginas que incluyan carrito.js.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .btn-carrito-header {
     position: relative; /* necesario para que el badge se posicione encima */
 }
 
 .carrito-badge {
-    /* Círculo rojo con número en la esquina superior del botón carrito */
+    /* CÃ­rculo rojo con nÃºmero en la esquina superior del botÃ³n carrito */
     position: absolute;
     top: -6px;
     right: -6px;
@@ -276,11 +276,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none; /* el clic pasa al botón, no al badge */
+    pointer-events: none; /* el clic pasa al botÃ³n, no al badge */
 }
 
 
-/* ══ RESPONSIVE ══════════════════════════════════ */
+/* â•â• RESPONSIVE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media (max-width: 900px) {
     .carrito-layout {
         grid-template-columns: 1fr;

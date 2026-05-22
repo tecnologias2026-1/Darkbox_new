@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>DARKBOX — Iniciar Sesión</title>
+    <title>Oryon Gaming — Iniciar Sesión</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
  
     <header><div class="contenedor">
-            <a href="index.html" class="logo">DARKBOX</a>
+            <a href="index.html" class="logo">Oryon Gaming</a>
             <div class="buscador">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"/>
@@ -29,7 +29,7 @@
         <div class="tarjeta-login">
  
             <div class="login-header">
-                <h1 class="logo-grande">DARKBOX</h1>
+                <h1 class="logo-grande">Oryon Gaming</h1>
                 <p class="subtitulo">Inicia sesión para continuar</p>
             </div>
  
@@ -77,36 +77,38 @@
         </div>
     </main>
 
-    <script src="js/auth.js"></script>
     <script>
-        /* Credenciales de demostración */
-        var p1 = 'dem';
-        var p2 = 'o';
-        var p3 = 'darkbox';
-        var p4 = '.com';
-        document.getElementById('txt-email').textContent = p1 + p2 + '@' + p3 + p4;
-        document.getElementById('txt-pass').textContent  = 'demo' + '123';
+        document.getElementById('txt-email').textContent = 'Configurada desde base de datos';
+        document.getElementById('txt-pass').textContent  = 'Tu contraseña registrada';
  
-        function validarLogin(event) {
+        async function validarLogin(event) {
             event.preventDefault();
  
             var email    = document.getElementById('email').value.trim();
             var password = document.getElementById('password').value.trim();
             var errorMsg = document.getElementById('errorMsg');
- 
-            var EMAIL_DEMO = 'demo@darkbox.com';
-            var PASS_DEMO  = 'demo123';
 
-            var usuario = Auth.validarCredenciales(email, password);
-            
-            if (!usuario && email === EMAIL_DEMO && password === PASS_DEMO) {
-                usuario = { nombre: 'Demo', email: EMAIL_DEMO };
-            }
+            errorMsg.classList.remove('visible');
 
-            if (usuario) {
-                Auth.guardarSesion(usuario);
-                window.location.href = 'home-sesion.html';
-            } else {
+            try {
+                var response = await fetch('api/login.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'same-origin',
+                    body: JSON.stringify({ email: email, password: password })
+                });
+
+                var data = await response.json();
+
+                if (response.ok && data.ok) {
+                    window.location.href = 'home-sesion.php';
+                    return false;
+                }
+
+                errorMsg.textContent = data.message || 'Email o contraseña incorrectos.';
+                errorMsg.classList.add('visible');
+            } catch (error) {
+                errorMsg.textContent = 'Error de conexión con el servidor.';
                 errorMsg.classList.add('visible');
             }
  
@@ -116,6 +118,8 @@
 </body>
 </html>
 <script src="js/buscar.js"></script>
+
+
 
 
 
